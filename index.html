@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uboblu</title>
+    
+    <link rel="stylesheet" href="https://api-ssps.cajthaml.eu/file/global/css/reset_ld9mrCCm.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&display=swap');
+        
+        body {
+            width: 100vw;
+            height: 100vh;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+
+            font-family: 'Nunito', sans-serif;
+            font-size: 16px;
+
+            color: #fff;
+            background-color: #575fcf;
+        }
+
+        .nav {
+            width: 100vw;
+            height: 10%;
+
+            font-weight: 500;
+            line-height: 25px;
+
+            display: grid;
+            grid-template-columns: repeat(5, 10%);
+            grid-template-rows: 100px;
+            align-items: center;
+            justify-items: center;
+            justify-content: space-around;
+        }
+
+            .item p {
+                width: 0%;
+
+                border-bottom: 2px solid #fff;
+
+                transition: all 0.5s linear;
+            }
+            .item p:hover {
+                width: 100%;
+
+                cursor: pointer;
+
+                color: #edc9ff;
+
+                border-bottom: 2px solid #edc9ff;
+            }
+
+            .logo {
+                width: 125px;
+                height: 100%;
+
+                padding-top: 10px;
+
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+
+                border-top: 13px solid #000;
+            }
+
+                .body {
+                    width: 55px;
+                    height: 50px;
+
+                    border: 5px solid #fff;
+                    border-radius: 20px;
+
+                    transform: skew(-10deg, 350deg);
+
+                    transition: all 0.5s linear;
+                }
+                .body:hover {
+                    border-color: #edc9ff;
+
+                    cursor: pointer;
+
+                    transform: skew(-20deg, 350deg);
+                }
+
+                .line {
+                    width: 100%;
+                    height: 6px;
+
+                    position: relative;
+
+                    background-color: #575fcf;
+
+                    transform: rotate(3deg);
+                }
+                .line:nth-child(2) {
+                    top: -40px;
+                }
+                .line:nth-child(3) {
+                    top: -30px;
+                }
+
+        .main {
+            width: 100%;
+            height: 80%;
+
+            display: grid;
+            grid-template-columns: 33% 34% 23% 10%;
+            grid-template-rows: repeat(4, 25%);
+        }
+
+            .intro {
+                grid-column: 1/3;
+                grid-row: 1/4;
+            }
+            
+                .texts {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+
+                    padding-left: 70px;
+                    gap: 50px;
+
+                    font-weight: 700;
+
+                    color: #e7e7e7;
+                }
+                .texts h1 {
+                    font-size: 60px;
+                    letter-spacing: 1px;
+                    line-height: 70px;
+
+                    color: #fff;
+                }
+                .texts p:first-child {
+                    font-size: 10px;
+                    letter-spacing: 3px;
+                    text-transform: uppercase;
+                }
+                .texts p:nth-child(3) {
+                    font-weight: 600;
+                }
+
+                    .dots {
+                        width: 55px;
+                        height: auto;
+                        
+                        display: flex;
+                        flex-direction: row;
+                        align-items: center;
+                        justify-content: space-between;
+                    }
+
+                        .dot {
+                            width: 8px;
+                            height: 8px;
+                            border: 1px solid #fff;
+                            border-radius: 8px;
+                        }
+                        .dot:hover {
+                            cursor: pointer;
+
+                            background-color: #ffffff40;
+                        }
+
+                        .full {
+                            background-color: #fff;
+                        }
+
+            .bubbles {
+                grid-column: 2/3;
+                grid-row: 1/5;
+
+                background-image: url(https://api-ssps.cajthaml.eu/file/2021-2022/2-wba/62/kei-fgAQcdB8N40-unsplash_zisMdlO5.jpg);
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: top;
+
+                z-index: -1;
+            }
+
+            .people {
+                grid-column: 4/5;
+                grid-row: 1/3;
+                
+                background-image: url(https://api-ssps.cajthaml.eu/file/2021-2022/2-wba/62/nathan-dumlao-k9TtK-UirRg-unsplash_RGfTyAJU.jpg);
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: top;
+
+                z-index: 2;
+            }
+            
+            .future {
+                grid-column: 3/5;
+                grid-row: 2/5;
+
+                padding: 50px;
+                padding-bottom: 80px;
+
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+
+                background-color: #cd84f1;
+
+                z-index: 1;
+            }
+
+                .rectangles {
+                    padding-left: 10%;
+
+                    display: flex;
+                    align-items: center;
+                    gap: 80px;
+                }
+
+                    .rectangle {
+                        width: 9px;
+                        height: 100px;
+
+                        transform: rotate(45deg);
+                        
+                        background-color: #fff;
+
+                        transition: all 0.5s linear;
+                    }
+                    .rectangle:hover {
+                        cursor: pointer;
+
+                        transform: rotate(-45deg);
+                    }
+
+                .futureTexts {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 30px;
+                }
+                .futureTexts h2 {
+                    font-size: 40px;
+                    font-weight: 700;
+                    line-height: 45px;
+                }
+                .futureTexts p {
+                    font-weight: 600;
+                    line-height: 21px;
+                }
+
+            .footer {
+                grid-column: 1/2;
+                grid-row: 4/5;
+
+                padding-left: 10%;
+
+                display: flex;
+                align-items: center;
+
+                color: #000;
+                background-color: #fff;
+            }
+            .footer p {
+                width: 300px;
+
+                font-size: 20px;
+                font-weight: 800;
+
+                line-height: 35px;
+
+                border-bottom: 2px solid #000;
+
+                transition: all 0.5s linear;
+            }
+            .footer p:hover {
+                width: 100%;
+
+                cursor: pointer;
+            }
+
+        @media (max-height: 860px) {
+            body {
+                height: auto;
+            }
+
+            .nav {
+                height: 100px;
+                margin-bottom: 100px;
+            }
+
+            .bubbles {
+                top: 100px;
+            }
+            
+            .main, .bubbles {
+                height: 775px;
+            }
+        }
+
+        @media (max-width: 1480px) {
+            body {
+                height: auto;
+            }
+
+            .nav {
+                height: 100px;
+                margin-bottom: 100px;
+            }
+
+            .main {
+                height: 775px;
+
+                grid-template-columns: 67% 33%;
+                grid-template-rows: 40% repeat(3, 25%);
+            }
+
+            .intro {
+                grid-column: 1/2;
+                grid-row: 1/3;
+
+                padding: 0px 30px;
+            }
+
+            .bubbles {
+                grid-column: 1/2;
+                grid-row: 3/4;
+
+                background-position: 20% 70%;
+            }
+
+            .people {
+                grid-column: 2/3;
+                grid-row: 1/2;
+
+                background-position: 10% 30%;
+            }
+
+            .future {
+                grid-column: 2/3;
+                grid-row: 2/5;
+            }
+
+            .footer {
+                grid-column: 1/3;
+                grid-row: 4/5;
+            }
+        }
+
+        @media (max-width: 1110px) {
+            .main {
+                grid-template-rows: 50% repeat(3, 25%);
+            }
+        }
+
+        @media (max-width: 1000px) {
+            .main {
+                grid-template-columns: 60% 40%;
+                grid-template-rows: 60% repeat(3, 25%);
+            }          
+
+            .rectangle {
+                width: 5px;
+                height: 95px;
+            }
+        }
+
+        @media (max-width: 780px) {
+
+        }
+
+        @media (max-width: 780px) {
+            .main {
+                grid-template-columns: 100%;
+                grid-template-rows: 85% 30% 60% 30% 15%;
+            }
+
+            .intro {
+                grid-column: 1/3;
+                grid-row: 1/2;
+            }
+            
+            .texts {
+                padding-left: 0px;
+            }
+
+            .bubbles {
+                grid-column: 1/2;
+                grid-row: 4/5;
+
+                background-position: 0% 40%;
+            }
+
+            .people {
+                grid-column: 1/2;
+                grid-row: 2/3;
+
+                background-position: 0% 30%;
+            }
+
+            .future {
+                grid-column: 1/2;
+                grid-row: 3/4;
+            }
+
+            .footer {
+                grid-column: 1/2;
+                grid-row: 5/6;
+
+                padding-left: 0%;
+
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 530px) {
+            .nav {
+                height: auto;
+
+                margin-bottom: 30px;
+
+                grid-template-columns: 100%;
+                grid-template-rows: repeat(5, 100px);
+            }
+
+            .logo {
+                grid-row: 1/2;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .nav {
+                margin-bottom: 0px;
+            }
+
+            .main {
+                grid-template-rows: 80vh 50vh 60vh 50vh 20vh;
+            }
+
+            .intro {
+                padding: 40px;
+
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+            .intro h1 {
+                font-size: 50px;
+                line-height: 60px;
+            }
+        }
+
+        @media (max-width: 365px) {
+            .intro {
+                padding: 30px;
+            }
+            .intro h1 {
+                font-size: 45px;
+                line-height: 55px;
+            }
+
+            .bubbles {
+                background-position: 75% 40%;
+            }
+
+            .futureTexts h2 {
+                font-size: 35px;
+                line-height: 40px;
+            }
+
+            .footer p {
+                width: 225px;
+            }
+        }
+    </style>
+</head>
+    
+<body>
+    <nav class="nav">
+        <article class="item"><p>Nabídky</p></article>
+        <article class="item"><p>Záruky</p></article>
+        <article class="logo">
+            <section class="body"></section>
+            <section class="line"></section>
+            <section class="line"></section>
+        </article>
+        <article class="item"><p>Přihlášení</p></article>
+        <article class="item"><p>Registrace</p></article>
+    </nav>
+    <main class="main">
+        <article class="intro">
+            <section class="texts">
+                <p>Nekonečná zábava</p>
+                <h1>Postavte si svojí<br>Budoucnost rychle<br>Dohromady s námi.</h1>
+                <p>Svět jde ku předu, my jsme připraveni. Půjdete s námi?</p>
+                <article class="dots">
+                    <section class="dot"></section>
+                    <section class="dot"></section>
+                    <section class="dot full"></section>
+                    <section class="dot"></section>
+                </article>
+            </section>
+        </article>
+        <article class="bubbles"></article>
+        <article class="people"></article>
+        <article class="future">
+            <article class="rectangles">
+                <section class="rectangle"></section>
+                <section class="rectangle"></section>
+                <section class="rectangle"></section>
+            </article>
+            <article class="futureTexts">
+                <h2>Budoucnost je plná krásných snů bez jediného zádrhelu</h2>
+                <p>Uboblu je světové známý životní poradce, kterému věří miliony lidí. Vaše spokojenost je naším nejhlavnějším záměrem.</p>
+            </article>
+        </article>
+        <footer class="footer">
+            <article class="text">
+                <p>S čím chcete začít?</p>
+            </article>
+        </footer>
+    </main>
+</body>
+</html>
